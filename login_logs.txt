@@ -1,0 +1,465 @@
+Authentication successful for user: david
+vie handler here
+in submit
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ goMan - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 666M
+in submit
+<br>删除“”的文件。
+Authentication successful for user: david
+in submit
+<br>删除“”的文件。
+<br><span style="color:red">  目录“ /var/www/free ”不存在。</span>
+in submit
+<br>删除\“\”的文件。
+Authentication successful for user: david
+in submit
+<br>删除\“\”的文件。
+<br><span style="color:red">  目录“ /var/www/freee ”不存在。</span>
+Authentication successful for user: david
+in submit
+<br>删除“""”的文件。
+<br><span style="color:red">  目录“" /var/www/freee "”不存在。</span>
+Authentication successful for user: david
+in submit
+<br>删除  的文件。
+<br><span style="color:red">  目录 /var/www/hhhhhh 不存在。</span>
+Authentication successful for user: david
+in submit
+<br>删除  的文件。
+<br><span style="color:red">  目录 /var/www/ffff 不存在。</span>
+Error authenticating user: Authentication failure
+Authentication failed for user: no one
+Error authenticating user: Authentication failure
+Authentication failed for user: david
+Error authenticating user: Authentication failure
+Authentication failed for user: david
+Error authenticating user: Authentication failure
+Authentication failed for user: david
+Error authenticating user: Authentication failure
+Authentication failed for user: david
+Error authenticating user: Authentication failure
+Authentication failed for user: david
+Error authenticating user: Authentication failure
+Authentication failed for user: david
+Authentication successful for user: david
+vie handler here
+in submit
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ goMan - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 666M
+in submit
+<br>删除 fgrr 的文件。
+Authentication successful for user: david
+in submit
+<br>删除 fffff 的文件。
+Authentication successful for user: david
+in submit
+<br>删除 gggggg 的文件。
+<br><span style="color:red">  目录 /var/www/gggggg 不存在。</span>
+vie handler here
+in submit
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+Authentication successful for user: david
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ goMan - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 666M
+<br>删除 test 的文件。
+<br><span style="color:red">  目录 /var/www/test 不存在。</span>
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ goMan - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 666M
+<br>删除 test 的文件。
+<br><span style="color:red">  目录 /var/www/test 不存在。</span>
+开始网站创建<br>
+为新网站建立数据库<br>
+配置新网站<br>
+正在为新网站填充数据库<br>
+
+   INFO  Preparing database.  
+
+  Creating migration table ......................................... 20ms DONE
+
+   INFO  Running migrations.  
+
+  2014_10_12_000000_create_users_table ............................. 34ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ............. 18ms DONE
+  2019_08_19_000000_create_failed_jobs_table ....................... 28ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ............ 43ms DONE
+  2024_04_16_035543_create_content_items_table ..................... 16ms DONE
+  2024_04_26_113820_create_inquiries_table ......................... 16ms DONE
+  2024_05_07_071418_create_navigations_table ....................... 18ms DONE
+
+
+   INFO  Seeding database.  
+
+Seeder executed successfully.
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ goMan - 124M <br>
+ testBigger - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 541M
+<br>删除 goMan 的文件。
+<br>删除数据库：goMan。
+<br><br>success <span style="color:chartreuse"> 网站 goMan 已成功删除。</span>
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ testBigger - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 666M
+Authentication successful for user: david
+开始网站创建<br>
+为新网站建立数据库<br>
+配置新网站<br>
+正在为新网站填充数据库<br>
+
+   INFO  Preparing database.  
+
+  Creating migration table ......................................... 21ms DONE
+
+   INFO  Running migrations.  
+
+  2014_10_12_000000_create_users_table ............................. 78ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ............. 18ms DONE
+  2019_08_19_000000_create_failed_jobs_table ....................... 26ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ............ 49ms DONE
+  2024_04_16_035543_create_content_items_table ..................... 20ms DONE
+  2024_04_26_113820_create_inquiries_table ......................... 17ms DONE
+  2024_05_07_071418_create_navigations_table ....................... 18ms DONE
+
+
+   INFO  Seeding database.  
+
+Seeder executed successfully.
+<br>
+<br>success <span style="color:chartreuse">完成创建网站please。如果您的 DNS 已正确设置为在以下位置查看，则 www.please.com 将可见并可供编辑</span>
+Authentication successful for user: david
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+ testBigger - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 541M
+<br>删除 testBigger 的文件。
+<br>删除数据库：testBigger。
+<br><br> <span style="color:chartreuse"> 网站 testBigger 已成功删除。</span>
+开始网站创建<br>
+为新网站建立数据库<br>
+配置新网站<br>
+正在为新网站填充数据库<br>
+
+   INFO  Preparing database.  
+
+  Creating migration table ......................................... 22ms DONE
+
+   INFO  Running migrations.  
+
+  2014_10_12_000000_create_users_table ............................. 29ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ............. 17ms DONE
+  2019_08_19_000000_create_failed_jobs_table ....................... 30ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ............ 43ms DONE
+  2024_04_16_035543_create_content_items_table ..................... 16ms DONE
+  2024_04_26_113820_create_inquiries_table ......................... 19ms DONE
+  2024_05_07_071418_create_navigations_table ....................... 16ms DONE
+
+
+   INFO  Seeding database.  
+
+Seeder executed successfully.
+<br>
+<br><span style="color:chartreuse">完成创建网站testBigger2。如果您的 DNS 已正确设置为在以下位置查看，<br>则 www.testBigger2.com 将可见并可供编辑</span>
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+ testBigger2 - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 541M
+Authentication successful for user: david
+Authentication successful for user: david
+开始网站创建<br>
+为新网站建立数据库<br>
+配置新网站<br>
+正在为新网站填充数据库<br>
+
+   INFO  Preparing database.  
+
+  Creating migration table ......................................... 18ms DONE
+
+   INFO  Running migrations.  
+
+  2014_10_12_000000_create_users_table ............................. 30ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ............. 19ms DONE
+  2019_08_19_000000_create_failed_jobs_table ....................... 29ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ............ 42ms DONE
+  2024_04_16_035543_create_content_items_table ..................... 19ms DONE
+  2024_04_26_113820_create_inquiries_table ......................... 18ms DONE
+  2024_05_07_071418_create_navigations_table ....................... 17ms DONE
+
+
+   INFO  Seeding database.  
+
+Seeder executed successfully.
+<br>
+<br><span style="color:chartreuse">完成创建网站thisthat。如果您的 DNS 已正确设置为在以下位置查看，<br>则 www.thisthat.com 将可见并可供编辑</span>
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+ testBigger2 - 124M <br>
+ thisthat - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 417M
+<br>删除 thisthat 的文件。
+<br>删除数据库：thisthat。
+<br><br> <span style="color:chartreuse">网站 thisthat 已成功删除。</span>
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+ testBigger2 - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 541M
+<br>删除 thisthat 的文件。
+<br><span style="color:red">  目录 /var/www/thisthat 不存在。</span>
+Authentication successful for user: david
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+ testBigger2 - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 541M
+<br>删除 testBigger2 的文件。
+<br>删除数据库：testBigger2。
+<br><br> <span style="color:chartreuse">网站 testBigger2 已成功删除。</span>
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ dunno - 124M <br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+ testBigger2 - 31M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 635M
+<br>删除 dunno 的文件。
+<br>删除数据库：dunno。
+<br><br> <span style="color:chartreuse">网站 dunno 已成功删除。</span>
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+ testBigger2 - 31M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 759M
+<br>删除 testBigger2 的文件。
+<br>删除数据库：testBigger2。
+<br><br> <span style="color:chartreuse">网站 testBigger2 已成功删除。</span>
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+ testBigger2 - 31M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 759M
+<br>删除 testBigger2 的文件。
+<br>删除数据库：testBigger2。
+<br><br> <span style="color:chartreuse">网站 testBigger2 已成功删除。</span>
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+ testBigger2 - 31M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 759M
+Authentication successful for user: david
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 790M
+开始网站创建<br>
+为新网站建立数据库<br>
+配置新网站<br>
+正在为新网站填充数据库<br>
+
+   INFO  Preparing database.  
+
+  Creating migration table ......................................... 20ms DONE
+
+   INFO  Running migrations.  
+
+  2014_10_12_000000_create_users_table ............................. 33ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ............. 16ms DONE
+  2019_08_19_000000_create_failed_jobs_table ....................... 31ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ............ 46ms DONE
+  2024_04_16_035543_create_content_items_table ..................... 17ms DONE
+  2024_04_26_113820_create_inquiries_table ......................... 18ms DONE
+  2024_05_07_071418_create_navigations_table ....................... 16ms DONE
+
+
+   INFO  Seeding database.  
+
+Seeder executed successfully.
+<br>
+<br><span style="color:chartreuse">完成创建网站usingChown。如果您的 DNS 已正确设置为在以下位置查看，<br>则 www.usingChown.com 将可见并可供编辑</span>
+Authentication successful for user: david
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+ usingChown - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 666M
+<br>删除 usingChown 的文件。
+<br>删除数据库：usingChown。
+<br><br> <span style="color:chartreuse">网站 usingChown 已成功删除。</span>
+vie handler here
+<span style="color:deepskyblue"> 该服务器上的站点列表：</span><br>
+<span style="color:deepskyblue"> _______________________</span><br>
+ fenghuang - 158M <br>
+ please - 124M <br>
+<br>
+<span style="color:deepskyblue"> _______________________</span><br>
+<span style="color:deepskyblue">  服务器剩余磁盘空间： 790M
+开始网站创建<br>
+为新网站建立数据库<br>
+配置新网站<br>
+正在为新网站填充数据库<br>
+
+   INFO  Preparing database.  
+
+  Creating migration table ......................................... 21ms DONE
+
+   INFO  Running migrations.  
+
+  2014_10_12_000000_create_users_table ............................. 30ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ............. 18ms DONE
+  2019_08_19_000000_create_failed_jobs_table ....................... 31ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ............ 46ms DONE
+  2024_04_16_035543_create_content_items_table ..................... 17ms DONE
+  2024_04_26_113820_create_inquiries_table ......................... 15ms DONE
+  2024_05_07_071418_create_navigations_table ....................... 16ms DONE
+
+
+   INFO  Seeding database.  
+
+Seeder executed successfully.
+<br>
+<br><span style="color:chartreuse">完成创建网站usingChown2。如果您的 DNS 已正确设置为在以下位置查看，<br>则 www.usingChown2.com 将可见并可供编辑</span>
+Authentication successful for user: david
+开始网站创建<br>
+为新网站建立数据库<br>
+配置新网站<br>
+正在为新网站填充数据库<br>
+
+   INFO  Preparing database.  
+
+  Creating migration table ......................................... 19ms DONE
+
+   INFO  Running migrations.  
+
+  2014_10_12_000000_create_users_table ............................. 31ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ............. 15ms DONE
+  2019_08_19_000000_create_failed_jobs_table ....................... 34ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ............ 46ms DONE
+  2024_04_16_035543_create_content_items_table ..................... 18ms DONE
+  2024_04_26_113820_create_inquiries_table ......................... 18ms DONE
+  2024_05_07_071418_create_navigations_table ....................... 15ms DONE
+
+
+   INFO  Seeding database.  
+
+Seeder executed successfully.
+Failed to change ownership.
+<br>
+<br><span style="color:chartreuse">完成创建网站goAgain。如果您的 DNS 已正确设置为在以下位置查看，<br>则 www.goAgain.com 将可见并可供编辑</span>
+Authentication successful for user: david
+开始网站创建<br>
+为新网站建立数据库<br>
+配置新网站<br>
+正在为新网站填充数据库<br>
+Attempting to change ownership of /var/www/getErrors/storage to www-data:www-data
+Directory exists: /var/www/getErrors/storage
+
+   INFO  Preparing database.  
+
+  Creating migration table ......................................... 21ms DONE
+
+   INFO  Running migrations.  
+
+  2014_10_12_000000_create_users_table ............................. 29ms DONE
+  2014_10_12_100000_create_password_reset_tokens_table ............. 18ms DONE
+  2019_08_19_000000_create_failed_jobs_table ....................... 29ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ............ 47ms DONE
+  2024_04_16_035543_create_content_items_table ..................... 18ms DONE
+  2024_04_26_113820_create_inquiries_table ......................... 15ms DONE
+  2024_05_07_071418_create_navigations_table ....................... 17ms DONE
+
+
+   INFO  Seeding database.  
+
+Seeder executed successfully.
+Ownership changed successfully.
+Ownership changed successfully.
+<br>
+<br><span style="color:chartreuse">完成创建网站getErrors。如果您的 DNS 已正确设置为在以下位置查看，<br>则 www.getErrors.com 将可见并可供编辑</span>

@@ -21,7 +21,7 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
             http.Redirect(w, r, "/newSite", http.StatusSeeOther)
             logToFile("Authentication successful for user: " + username)
         } else {
-            feedback := "Authentication failed. Please try again."
+            feedback := "认证失败。请再试一次。"
             logToFile("Authentication failed for user: " + username)
             renderLoginPage(w, feedback)
         }
@@ -29,10 +29,6 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
         renderLoginPage(w, "")
     }
 }
-
-
-
-
 
 func renderLoginPage(w http.ResponseWriter, feedback string) {
     tmpl, err := template.ParseFiles("login.html")

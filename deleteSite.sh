@@ -1,32 +1,33 @@
 #!/bin/bash
-echo "success: Removing files for  $dir_path"
-# Check if the correct number of arguments is provided
 if [ "$#" -ne 3 ]; then
     echo "Usage: $0 <db_name> <mysql_user> <mysql_password>"
     exit 1
 fi
 
+
+
 # Assign arguments to variables
 db_name="$1"
 mysql_user="$2"
 mysql_password="$3"
-
-# Define the directory path
+echo "<br>删除 $db_name 的文件。"
 dir_path="/var/www/$db_name"
 
-# Check if the directory exists and delete it
 if [ -d "$dir_path" ]; then
     rm -rf "$dir_path"
     
 else
-    echo "failure: Directory $dir_path does not exist."
+echo "<br><span style=\"color:red\">目录 "$dir_path" 不存在。</span>"
+exit 1
 fi
-echo "success: Removing database for  $dir_path"
-# Drop the database
-mysql -u "$mysql_user" -p"$mysql_password" -e "DROP DATABASE IF EXISTS \`$db_name\`;"
-if [ $? -eq 0 ]; then
-    echo "success: website: $db_name successfully removed."
+echo "<br>删除数据库：$db_name。"
+
+if ! error_message=$(mysql -u "$mysql_user" -p"$mysql_password" -e "DROP DATABASE IF EXISTS \`$db_name\`;" 2>&1); then
+    echo "<br><span style=\"color:red\">无法删除 $db_name 的数据库。<br> . 错误: $error_message </span>"
+    rm -rf "/var/www/$db_name"
+    exit 1
 else
-    echo "failure: to drop database $db_name."
+    echo "<br><br> <span style=\"color:chartreuse\">网站 $db_name 已成功删除。</span>"
 fi
+
 

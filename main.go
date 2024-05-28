@@ -19,7 +19,6 @@ var upgrader = websocket.Upgrader{
 
 var clients = make(map[*websocket.Conn]bool)
 var broadcast = make(chan string)
-// var dotBroadcast = make(chan bool)
 
 var timer *time.Timer
 var done = make(chan bool)
@@ -29,8 +28,8 @@ func main() {
     http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
     http.HandleFunc("/", loginHandler)
     http.HandleFunc("/newSite", newSiteHandler)
-	 http.HandleFunc("/viewSites", viewSitesHandler)
-	  http.HandleFunc("/deleteSite", deleteSiteHandler)
+	http.HandleFunc("/viewSites", viewSitesHandler)
+	http.HandleFunc("/deleteSite", deleteSiteHandler)
     go handleMessages() // Start the message handling goroutine
 
 
@@ -46,11 +45,9 @@ func newSiteHandler(w http.ResponseWriter, r *http.Request) {
             fmt.Fprintf(w, "Website name cannot be empty")
             return
         }
-
         cmd := exec.Command("/bin/bash", "newSite.sh", websiteName, username, password)
          feedback := make(chan string)
         go submitHandler(cmd, feedback)
-        
         message := <-feedback
         renderNewSitePage(w, message)
     } else {
@@ -70,7 +67,6 @@ func deleteSiteHandler(w http.ResponseWriter, r *http.Request) {
         cmd := exec.Command("/bin/bash", "deleteSite.sh", websiteName, username, password)
          feedback := make(chan string)
         go submitHandler(cmd, feedback)
-        
         message := <-feedback
         renderNewSitePage(w, message)
     } else {

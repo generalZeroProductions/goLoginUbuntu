@@ -91,7 +91,9 @@ if [ $? -ne 0 ]; then
 fi
 
 # # Update .env file with the required values
-sed -i "s/^APP_NAME=.*/APP_NAME=FengHuang/" "$env_file"
+
+
+sed -i "s/^APP_NAME=.*/APP_NAME=${dir_name}/" "$env_file"
 sed -i "s/^APP_ENV=.*/APP_ENV=local/" "$env_file"
 sed -i "s/^APP_KEY=.*/APP_KEY=base64:fmLIgNQQQa7xbLP8ZmfRAxPDWve3B8FeKfRN+YKlN9M=/" "$env_file"
 sed -i "s/^APP_DEBUG=.*/APP_DEBUG=true/" "$env_file"
@@ -109,7 +111,20 @@ if [ $? -ne 0 ]; then
 
 fi
 echo "正在为新网站填充数据库<br>"
+
+
+
 # Run Laravel migrations
+echo "Attempting to change ownership of /var/www/$dir_name/storage to www-data:www-data"
+
+# Check if the directory exists
+if [ -d "/var/www/$dir_name/storage" ]; then
+    echo "Directory exists: /var/www/$dir_name/storage"
+else
+    echo "Directory does not exist: /var/www/$dir_name/storage"
+    exit 1
+fi
+
 php artisan migrate
 if [ $? -ne 0 ]; then
     echo "<span style=\"color:red\"> 无法运行迁移</span>"
@@ -124,5 +139,16 @@ if [ $? -ne 0 ]; then
     drop_database "$dir_name" "$mysql_user" "$mysql_password"
     exit 1
 fi
+sudo chown -R www-data:www-data "/var/www/$dir_name/storage" 2> chown_error.log
+
+# Debug: Verify the command worked
+if [ $? -eq 0 ]; then
+    echo "Ownership changed successfully."
+else
+    echo "Failed to change ownership. Check chown_error.log for details."
+    cat chown_error.log
+fi
+
+systemctl restart nginx
 echo "<br>
-echo "<br>success <span style=\"color:chartreuse\">完成创建网站“$dir_name”。如果您的 DNS 已正确设置为在以下位置查看，则 www.$dir_name.com 将可见并可供编辑</span>"
+<br><span style=\"color:chartreuse\">完成创建网站$dir_name。如果您的 DNS 已正确设置为在以下位置查看，<br>则 www.$dir_name.com 将可见并可供编辑</span>"

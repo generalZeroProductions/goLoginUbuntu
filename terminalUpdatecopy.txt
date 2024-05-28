@@ -7,27 +7,46 @@ import (
     "net/http"
     "os/exec"
     "github.com/gorilla/websocket"
+	// "strings"
+	"time"
 )
 
-
-
-
-
-
-
-
-func submitHandler(cmd *exec.Cmd, feedback chan<- string) {
+func submitHandler(cmd *exec.Cmd,feedback chan<- string) {
+  logToFile("in submit");
     stdout, err := cmd.StdoutPipe()
     if err != nil {
-        feedback <- fmt.Sprintf("Failed to get stdout pipe: %s", err)
+          feedback <- fmt.Sprintf("Failed to get stdout pipe: %s", err)
         return
     }
     if err := cmd.Start(); err != nil {
-        feedback <- fmt.Sprintf("Failed to start command: %s", err)
+        feedback <- fmt.Sprintf("Failed to get stdout pipe: %s", err)
         return
     }
 
+    scriptDone := make(chan bool)
     go func() {
+        timer := time.NewTimer(1 * time.Second)
+        defer timer.Stop()
+        go func() {
+            for {
+                select {
+                case <-timer.C:
+                  
+                    for client := range clients {
+                        err := client.WriteMessage(websocket.TextMessage, []byte("."))
+                        if err != nil {
+                            log.Printf("WebSocket error: %v", err)
+                            client.Close()
+                            delete(clients, client)
+                        }
+                    }
+                    timer.Reset(1 * time.Second)
+                case <-scriptDone:
+                    return
+                }
+            }
+        }()
+
         scanner := bufio.NewScanner(stdout)
         for scanner.Scan() {
             line := scanner.Text()
@@ -40,21 +59,13 @@ func submitHandler(cmd *exec.Cmd, feedback chan<- string) {
 
         if err := cmd.Wait(); err != nil {
             log.Println("Command finished with error:", err)
-            feedback <- fmt.Sprintf("Command finished with error: %s", err)
-        } else {
-            feedback <- "COMPLETE"
         }
+
+        scriptDone <- true
+        terminalBroadcast("COMPLETE")
     }()
+	
 }
-
-
-
-
-
-
-
-
-
 
 func handleConnections(w http.ResponseWriter, r *http.Request) {
     conn, err := upgrader.Upgrade(w, r, nil)

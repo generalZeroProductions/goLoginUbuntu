@@ -127,7 +127,7 @@
     <script>
       const terminalDiv = document.getElementById("terminal");
       const ws = new WebSocket("ws://192.168.0.90:2000/ws");
-
+      const feedback = document.getElementById("feedback");
       ws.onmessage = function (event) {
         terminalDiv.innerHTML += event.data;
         terminalDiv.scrollTop = terminalDiv.scrollHeight; // Scroll to bottom
@@ -140,18 +140,27 @@
       ws.onerror = function (error) {
         console.error("WebSocket error:", error);
       };
-
+      const siteNameField = document.getElementById("siteNameField");
+      siteNameField.addEventListener("input", function (event) {
+        if (siteNameField.value.trim() !== "") {
+          feedback.innerHTML = "";
+        }
+      });
       document
         .getElementById("newSiteForm")
         .addEventListener("submit", function (event) {
           event.preventDefault(); // Prevent the form from submitting the default way
 
           const formData = new FormData(event.target);
-          var siteNameField = document.getElementById("siteNameField");
+          const siteNameField = document.getElementById("siteNameField");
           const websitename = siteNameField.value.trim();
           var terminal = document.getElementById("terminal");
           terminal.innerHTML = "";
-
+          if (!isValidMySQLDatabaseName(websitename)) {
+            feedback.innerHTML =
+              "this name is not a valid name for a url or a database";
+            return;
+          }
           fetch("/newSite", {
             method: "POST",
             body: new URLSearchParams(`websitename=${websitename}`),
@@ -162,7 +171,7 @@
             .then((response) => response.text())
             .then((data) => {
               console.log("Form submitted successfully:", data);
-              // Optionally display a message or handle the response data
+              feedback.innerHTML = "";
             })
             .catch((error) => {
               console.error("Error submitting form:", error);
@@ -219,6 +228,11 @@
               console.error("Error submitting form:", error);
             });
         });
+
+      function isValidMySQLDatabaseName(name) {
+        var pattern = /^[A-Za-z0-9_]+$/;
+        return pattern.test(name) && name.length <= 64;
+      }
     </script>
   </body>
 </html>
