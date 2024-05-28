@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Manager</title>
+    <style>
+      #terminal {
+        background-color: black;
+        color: white;
+        width: 650px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        height: 300px;
+        overflow-y: scroll;
+        margin-top: 10px;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        width: 340px;
+        background-color: white;
+        padding: 50px 150px 10px 150px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: grid;
+        gap: 20px;
+      }
+      .view-button {
+        background-color: #d3d3d3; /* Light gray */
+        color: black;
+      }
+
+      .view-button:hover {
+        background-color: #a9a9a9; /* Dark gray */
+      }
+
+      .delete-button {
+        background-color: #ff4c4c; /* Red */
+        color: white;
+      }
+
+      .delete-button:hover {
+        background-color: #d32f2f; /* Darker red */
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .terminal-row {
+        padding: 0px !important;
+      }
+
+      .view-form {
+        margin: 0;
+      }
+
+      .row input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      .action-form {
+        margin: 0;
+      }
+
+      .action-form + .action-form {
+        margin-left: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h3>网站管理控制台</h3>
+        <form class="view-form" id="viewSitesForm">
+          <button type="submit" class="button view-button">网站列表</button>
+        </form>
+      </div>
+      <div class="row">
+        <input id="siteNameField" type="text" placeholder="网站名称" />
+      </div>
+      <div class="row">
+        <form id="newSiteForm" class="action-form">
+          <button type="submit" class="button">创建新网站</button>
+          <input type="hidden" id="newSiteName" name="websitename" />
+        </form>
+        <form id="deleteSiteForm" class="action-form">
+          <button type="submit" class="button delete-button">删除网站</button>
+          <input type="hidden" id="deleteSiteName" name="websitename" />
+        </form>
+      </div>
+      <div class="row" id="feedback" style="color: red"></div>
+      <div class="row" style="justify-content: center !important">
+        <h5>Updates</h5>
+      </div>
+    </div>
+    <div class=".terminal-row">
+      <div id="terminal"></div>
+    </div>
+
+    <script>
+      const terminalDiv = document.getElementById("terminal");
+      const ws = new WebSocket("ws://192.168.0.90:2000/ws");
+
+      ws.onmessage = function (event) {
+        terminalDiv.innerHTML += event.data;
+        terminalDiv.scrollTop = terminalDiv.scrollHeight; // Scroll to bottom
+      };
+
+      ws.onclose = function () {
+        terminalDiv.innerHTML += "<br>Connection closed";
+      };
+
+      ws.onerror = function (error) {
+        console.error("WebSocket error:", error);
+      };
+
+      document
+        .getElementById("newSiteForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting the default way
+
+          const formData = new FormData(event.target);
+          var siteNameField = document.getElementById("siteNameField");
+          const websitename = siteNameField.value.trim();
+          var terminal = document.getElementById("terminal");
+          terminal.innerHTML = "";
+
+          fetch("/newSite", {
+            method: "POST",
+            body: new URLSearchParams(`websitename=${websitename}`),
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              console.log("Form submitted successfully:", data);
+              // Optionally display a message or handle the response data
+            })
+            .catch((error) => {
+              console.error("Error submitting form:", error);
+            });
+        });
+
+      deleteSiteName.value = siteNameField.value;
+      document
+        .getElementById("deleteSiteForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting the default way
+          const formData = new FormData(event.target);
+          var siteNameField = document.getElementById("siteNameField");
+          const websitename = siteNameField.value.trim();
+          var terminal = document.getElementById("terminal");
+          terminal.innerHTML = "";
+          fetch("/deleteSite", {
+            method: "POST",
+            body: new URLSearchParams(`websitename=${websitename}`),
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              console.log("Form submitted successfully:", data);
+              // Optionally display a message or handle the response data
+            })
+            .catch((error) => {
+              console.error("Error submitting form:", error);
+            });
+        });
+      document
+        .getElementById("viewSitesForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting the default way
+
+          const formData = new FormData(event.target);
+          var terminal = document.getElementById("terminal");
+          terminal.innerHTML = "";
+
+          fetch("/viewSites", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              console.log("Form submitted successfully:", data);
+              // Optionally display a message or handle the response data
+            })
+            .catch((error) => {
+              console.error("Error submitting form:", error);
+            });
+        });
+    </script>
+  </body>
+</html>
